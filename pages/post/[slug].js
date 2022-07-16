@@ -5,6 +5,7 @@ import { PostDetail, Categories, PostWidget, Author, Comments, CommentsForm, Loa
 import { getPosts, getPostDetails } from '../../services';
 
 const PostDetails = ({ post }) => {
+  
   const router = useRouter();
 
   if (router.isFallback) {
@@ -40,7 +41,7 @@ export async function getStaticProps({ params }) {
 
   return {
     props: {
-      post: data,
+      post: data
     },
   };
 }
@@ -52,6 +53,6 @@ export async function getStaticPaths() {
 
   return {
     paths: posts.map(({ node: { slug }}) => ({ params: { slug } })),
-    fallback: false,
+    fallback: true,
   };
 }

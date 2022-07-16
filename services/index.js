@@ -211,3 +211,4 @@ export const getAdjacentPosts = async (createdAt, slug) => {
 
   return { next: result.next[0], previous: result.previous[0] };
 };
+
